@@ -160,7 +160,7 @@ namespace 2D_Forest_Attributes
         private static List<Shape> ReadShapesFromFile()
         {
             List<Shape> shapes = new List<Shape>();
-            using (StreamReader sr = File.OpenText("TreePositionsTestCrown.txt"))
+            using (StreamReader sr = File.OpenText("fileInput.txt"))
             {
                 string line;
                 while ((line = sr.ReadLine()) != null)
@@ -193,20 +193,24 @@ namespace 2D_Forest_Attributes
             chart1.ChartAreas["ChartArea1"].AxisX.MajorGrid.Enabled = false;
             chart1.ChartAreas["ChartArea1"].AxisY.MajorGrid.Enabled = false;
             CreateAxesAndLabels();
+	    
             // Set Line Width 
             chart1.Series[2].BorderWidth = 1;
             chart1.Series[2].Color = Color.Green;
+	    
             // Create Legend and Assign Custom Names
             CreateLegend();
+	    
             // Create a ToolTip 
             CreateToolTip();
+	    
             // Set Chart Title and modify it
             createChartTitle();
         }
 
         private void createChartTitle()
         {
-            chart1.Titles.Add("Tree Positions");
+            chart1.Titles.Add("2D Forest Attributes");
             chart1.Titles[0].Alignment = ContentAlignment.MiddleCenter;
             chart1.Titles[0].Font = new Font("Arial", 12, FontStyle.Bold);
             chart1.Titles[0].ForeColor = Color.DarkCyan;
@@ -300,7 +304,7 @@ namespace 2D_Forest_Attributes
         {
             try
             {
-                this.chart1.SaveImage("F:\\Visual Studio\\Tree Positions-Crown Projections\\Version3\\Tree Positions-Crown_8Radii_Tree\\bin\\Debug\\ChartImage.png", ChartImageFormat.Png);
+                this.chart1.SaveImage("filePath", ChartImageFormat.Png); // Dont forget to add your path inside the brackets
                 MessageBox.Show("File saved", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (System.IO.IOException ex)
