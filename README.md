@@ -8,8 +8,9 @@ b) tree crowns; measured in the field using 8 radii per tree
 
 It also calcualates the tree basal area (based on the given DBH)
 
-The input data (.txt) should follow the below structure:
-x, y, Azimuth, Dist 1, Dist 2, Dist 3, Dist 4, Dist 5, Dist 6, Dist 7, Dist 8, DBH 
+The input data (.txt) should have the following structure:
+
+X, Y, Azimuth, Dist 1, Dist 2, Dist 3, Dist 4, Dist 5, Dist 6, Dist 7, Dist 8, DBH 
 
 * Dist 1,2,3...: refers to the horizontal distance of each point from the stem
 * DBH in cm
