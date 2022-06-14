@@ -2,7 +2,7 @@
 
 About
 
-2D Forest Attributes is a windows form application which can be used to visualize:
+2D Forest Attributes is a Windows Form Application (WFA) which can be used to visualize:
 a) tree positions (measured in local and global coordinate system) and
 b) tree crowns; measured in the field using 8 radii per tree
 
@@ -20,4 +20,3 @@ An illustration of the structure can be seen in the attached figure.
 There is an additional option to export the 2D graph if image format.
 
 Contributors: Dimitrios Panagiotidis
-
