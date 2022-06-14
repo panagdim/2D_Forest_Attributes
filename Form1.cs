@@ -9,7 +9,7 @@ namespace 2D_Forest_Attributes
 {
     public partial class Form1 : Form
     {
-        // using 8 radii/tree
+        // Using 8 radii/tree
         const int degrees45 = 45;
         const int degrees90 = 90;
         const int degrees135 = 135;
@@ -61,11 +61,6 @@ namespace 2D_Forest_Attributes
                 }
                 CreateChart();
             }
-            
-            catch (FormatException ex)
-            {
-                //MessageBox.Show(ex.Message);
-            }
             catch (InvalidDataException ex1)
             {
                 MessageBox.Show(ex1.Message);
@@ -74,8 +69,8 @@ namespace 2D_Forest_Attributes
             {
                 MessageBox.Show("File excpetion caught, please check your fileName");
             }
-
         }
+	
         // Estimate the BA for each tree in [m^2]
         private void EstimateBA(Shape s, ListBox p, Color p1)
         {
@@ -125,9 +120,9 @@ namespace 2D_Forest_Attributes
             series.Points.AddXY(Every45X(s.Angle, degrees315, s.Distance8, s.CenterX), Every45Y(s.Angle, degrees315, s.Distance8, s.CenterY));
             series.Points.AddXY(TreePositionX(s.Angle, s.Distance1, s.CenterX), TreePositionY(s.Angle, s.Distance1, s.CenterY));
                 
-            series.ChartType = SeriesChartType.Line;
-	      }
-        // Crown points
+            series.ChartType = SeriesChartType.Line; }
+        
+	// Crown points
         private void DrawCrown(Series series, Shape s)
         {
             series.Points.AddXY(TreePositionX(s.Angle, s.Distance1, s.CenterX), TreePositionY(s.Angle, s.Distance1, s.CenterY));
@@ -255,6 +250,7 @@ namespace 2D_Forest_Attributes
             double x = (Math.Sin(ConvertDegToRadians(angle)) * distance) + b;
             return x;
         }
+	
         public double TreePositionY(double angle, double distance, Double b)
         {
             double y = (Math.Cos(ConvertDegToRadians(angle)) * distance) + b;
@@ -266,6 +262,7 @@ namespace 2D_Forest_Attributes
             double standardAngleX = (Math.Sin(ConvertDegToRadians(angle + angleVer)) * distance) + x;
             return standardAngleX;
         }
+	
         public double Every45Y(double angle, int angleVer, double distance, double y)
         {
             double standardAngleY = (Math.Cos(ConvertDegToRadians(angle + angleVer)) * distance) + y;
@@ -293,8 +290,7 @@ namespace 2D_Forest_Attributes
             listBox10.Items.Clear();
             listBox11.Items.Clear();
             listBox12.Items.Clear();
-            listBox13.Items.Clear();
-            
+            listBox13.Items.Clear();           
             // Clear all series from the graph            
             chart1.Series.Clear();
             chart1.Titles.Clear();
